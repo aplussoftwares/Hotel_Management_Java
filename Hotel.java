@@ -27,9 +27,9 @@ class BreakFast{
 		System.out.println("=========================================");
 		System.out.println("S.no   |   Item   |  Price  |  Available |");
 		System.out.println("=========================================");
-		for(int i=0;i<4;i++){
+		for(int i=0;i< items_name.length;i++){
 			System.out.println((i+1)+"      | "+items_name[i]+"     | "+break_items[i][1]+"      | "+break_items[i][0]+"         |");
-			if(i<3){
+			if(i< items_name.length-1){
 				System.out.println("-----------------------------------------|");
 			}
 		}
@@ -41,7 +41,7 @@ class BreakFast{
 		Scanner M = new Scanner(System.in);
 		System.out.println("Enter the Serial Number:");
 		sno = M.nextInt();
-		if(sno > 5 || sno < 1){
+		if(sno > items_name.length || sno < 1){
 			throw new ArithmeticException("The Serial Number Is Not A Valid One");
 		}
 		System.out.println("Enter the Quantity:");
@@ -89,6 +89,9 @@ class Hotel{
 					break;
 				case 3:
 					b.print_items();
+					break;
+				case 4:
+					System.out.println("Thanks For Using Our System");
 					break;
 				default:
 					System.out.println("Enter A Valid Choice");
